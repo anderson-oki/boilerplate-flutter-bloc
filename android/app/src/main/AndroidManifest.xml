@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.nekoriko.boilerplate_flutter">
+    package="com.necorico.boilerplate_flutter">
    <application
         android:label="boilerplate_flutter"
         android:icon="@mipmap/ic_launcher">

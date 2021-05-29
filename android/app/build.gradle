@@ -33,7 +33,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.nekoriko.boilerplate_flutter"
+        applicationId "com.necorico.boilerplate_flutter"
         minSdkVersion 16
         targetSdkVersion 30
         versionCode flutterVersionCode.toInteger()
