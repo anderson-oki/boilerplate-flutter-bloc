@@ -3,23 +3,24 @@ import 'package:boilerplate_flutter/blocs/authentication/authentication_state.da
 import 'package:boilerplate_flutter/repositories/user/user_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> {
+class AuthenticationBloc
+    extends Bloc<AuthenticationEvent, AuthenticationState> {
   final UserRepository userRepository;
 
-  AuthenticationBloc(AuthenticationState state, {required this.userRepository}) : super(state);
+  AuthenticationBloc(AuthenticationState state, {required this.userRepository})
+      : super(state) {
+    on<AuthenticationRequested>(
+      (AuthenticationEvent event, Emitter emit) async {
+        emit(AuthenticationInProgress());
 
-  @override
-  Stream<AuthenticationState> mapEventToState(AuthenticationEvent event) async* {
-    if (event is AuthenticationRequested) {
-      yield AuthenticationInProgress();
+        if (!await this.userRepository.isSignedIn()) {
+          emit(AuthenticationRequired());
 
-      if (!await this.userRepository.isSignedIn()) {
-        yield AuthenticationRequired();
+          return;
+        }
 
-        return;
-      }
-
-      yield AuthenticationSucceeded();
-    }
+        emit(AuthenticationSucceeded());
+      },
+    );
   }
 }

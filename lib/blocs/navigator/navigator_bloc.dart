@@ -5,14 +5,17 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class NavigatorBloc extends Bloc<NavigatorEvent, dynamic> {
   final GlobalKey<NavigatorState> key;
 
-  NavigatorBloc(this.key) : super(0);
+  NavigatorBloc(this.key) : super(0) {
+    on<NavigateToLoginEvent>(
+      (NavigatorEvent event, Emitter emit) {
+        key.currentState!.pushNamed('/login');
+      },
+    );
 
-  @override
-  Stream<dynamic> mapEventToState(event) async* {
-    if (event is NavigateToLoginEvent) {
-      key.currentState!.pushNamed('/login');
-    } else if (event is NavigateToMainEvent) {
-      key.currentState!.pushNamed('/main');
-    }
+    on<NavigateToMainEvent>(
+      (NavigatorEvent event, Emitter emit) {
+        key.currentState!.pushNamed('/main');
+      },
+    );
   }
 }

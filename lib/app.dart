@@ -1,4 +1,3 @@
-import 'package:boilerplate_flutter/blocs/authentication/authentication_bloc.dart';
 import 'package:boilerplate_flutter/blocs/login/bloc.dart';
 import 'package:boilerplate_flutter/blocs/navigator/navigator_bloc.dart';
 import 'package:boilerplate_flutter/blocs/navigator/navigator_event.dart';
@@ -90,6 +89,8 @@ class _AppState extends State<App> {
                 builder: (BuildContext context) => MainScreen(),
               );
           }
+
+          return null;
         },
       ),
     );
