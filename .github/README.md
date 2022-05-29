@@ -5,14 +5,16 @@ starting every new project.
 
 ## Application Identifier
 
-The first step is to replace the
-package name and the application name.
+The first step is to replace the package name and the application name.
 
 Search for the string `com.necorico.boilerplate_flutter`. It is safe to replace under all the files, but make sure
 to review and understand what is the purpose of every replace.
 
 As the second step you need to update the package name for ios on the `project.pbxproj`, the strings are `com.necorico.boilerplate`
 on every `PRODUCT_BUNDLE_IDENTIFIER`.
+
+The application name for iOS should be updated in the `InfoPlist.strings`, the template currently contains the internationalization
+to Japanese and the Original English one.
 
 ## Dependencies
 
