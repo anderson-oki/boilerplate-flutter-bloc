@@ -1,4 +1,4 @@
-import 'package:boilerplate_flutter/components/nav_close_button.dart';
+import 'package:boilerplate_flutter/components/common/nav_close_button.dart';
 import 'package:boilerplate_flutter/support/custom_theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

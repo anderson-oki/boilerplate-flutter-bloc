@@ -1,5 +1,8 @@
+import 'dart:math';
+
 class UserRepository {
   Future<bool> isSignedIn() async {
-    return false;
+    // TODO: Implement the sign in logic
+    return Random().nextBool();
   }
 }

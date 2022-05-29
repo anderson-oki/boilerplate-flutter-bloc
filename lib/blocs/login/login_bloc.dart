@@ -4,9 +4,15 @@ import 'bloc.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   LoginBloc(LoginState initialState) : super(initialState) {
-    on<LoginEvent>(
-      (LoginEvent event, Emitter emit) => {
-        //
+    on<LoginRequested>(
+      (LoginEvent event, Emitter emit) {
+        emit(LoginSucceeded());
+      },
+    );
+
+    on<LogoutRequested>(
+      (LoginEvent event, Emitter emit) {
+        emit(LogoutSucceeded());
       },
     );
   }
