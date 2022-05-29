@@ -40,4 +40,4 @@ and you can check the [Documentation](https://developer.android.com/reference/an
 - Initial Bloc, Events and States
 - Configurations
 - Support Files (Helpers)
-- Navigator Bloc
+- Navigation using Go Router
