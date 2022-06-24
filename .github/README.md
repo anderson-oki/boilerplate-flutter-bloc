@@ -45,3 +45,12 @@ and you can check the [Documentation](https://developer.android.com/reference/an
 - Configurations
 - Support Files (Helpers)
 - Navigation using Go Router
+
+## Running Tests
+
+The tests are merely examples, except for the Router, where usually you want to keep its usage unless you plan to remove GoRouter,
+ you can run the tests by using `flutter test` or if you want to check the coverage you can run
+`flutter test --coverage && genhtml coverage/lcov.info -o coverage/html && open ./coverage/html/index.html`, note that is extremely
+recommended you to review the tests and remove unused tests such as the screens widget tests.
+
+The boilerplate contains a few helpers to pump widgets, which in the future may be moved to a library
