@@ -9,6 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:flutter_i18n/loaders/decoders/json_decode_strategy.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:go_router/go_router.dart';
 
 class App extends StatefulWidget {
   State<App> createState() => _AppState();
@@ -18,9 +19,14 @@ class App extends StatefulWidget {
 
 class _AppState extends State<App> {
   @override
-  Widget build(BuildContext context) {
-    final router = AppRouter.make(BlocProvider.of<AuthenticationBloc>(context));
+  void initState() {
+    super.initState();
 
+    router = AppRouter.make(BlocProvider.of<AuthenticationBloc>(context));
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return CupertinoApp.router(
       routeInformationParser: router.routeInformationParser,
       routerDelegate: router.routerDelegate,
@@ -48,4 +54,6 @@ class _AppState extends State<App> {
       supportedLocales: Locale.SUPPORTED_LOCALES,
     );
   }
+
+  late final GoRouter router;
 }
