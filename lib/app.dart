@@ -31,6 +31,7 @@ class _AppState extends State<App> {
     return CupertinoApp.router(
       routeInformationParser: router.routeInformationParser,
       routerDelegate: router.routerDelegate,
+      routeInformationProvider: router.routeInformationProvider,
       theme: const CupertinoThemeData(
         barBackgroundColor: CustomTheme.PRIMARY_COLOR,
         primaryColor: CustomTheme.PRIMARY_COLOR,
