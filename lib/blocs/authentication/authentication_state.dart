@@ -10,4 +10,3 @@ class AuthenticationInProgress extends AuthenticationState {}
 class AuthenticationRequired extends AuthenticationState {}
 
 class AuthenticationSucceeded extends AuthenticationState {}
-

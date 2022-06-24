@@ -6,15 +6,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState>
     with ChangeNotifier {
-  final UserRepository userRepository;
-
   AuthenticationBloc(AuthenticationState state, {required this.userRepository})
       : super(state) {
     on<AuthenticationRequested>(
-      (AuthenticationEvent event, Emitter emit) async {
+      (AuthenticationEvent event, Emitter<AuthenticationState> emit) async {
         emit(AuthenticationInProgress());
 
-        if (!await this.userRepository.isSignedIn()) {
+        if (!await userRepository.isSignedIn()) {
           emit(AuthenticationRequired());
 
           notifyListeners();
@@ -28,4 +26,6 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState>
       },
     );
   }
+
+  final UserRepository userRepository;
 }

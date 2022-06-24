@@ -1,5 +1,7 @@
 # Boilerplate
 
+[![style: very good analysis](https://img.shields.io/badge/style-very_good_analysis-B22C89.svg)](https://pub.dev/packages/very_good_analysis)
+
 Use this template to initially create a Flutter app with the bloc pattern. The main purpose is to save time when
 starting every new project.
 

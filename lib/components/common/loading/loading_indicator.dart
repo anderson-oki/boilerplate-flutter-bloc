@@ -4,24 +4,22 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class LoadingIndicator extends StatelessWidget {
-  final bool hasCloseButton;
+  const LoadingIndicator({Key? key, this.hasCloseButton = false})
+      : super(key: key);
 
-  LoadingIndicator({Key? key, this.hasCloseButton = false}) : super(key: key);
+  final bool hasCloseButton;
 
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       backgroundColor: Colors.white,
       navigationBar: CupertinoNavigationBar(
-        leading: hasCloseButton ? NavCloseButton() : Container(),
+        leading: hasCloseButton ? const NavCloseButton() : Container(),
         trailing: Row(
           mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            //
-          ],
         ),
       ),
-      child: Center(
+      child: const Center(
         child: CircularProgressIndicator(
           valueColor: AlwaysStoppedAnimation<Color>(CustomTheme.PRIMARY_COLOR),
         ),

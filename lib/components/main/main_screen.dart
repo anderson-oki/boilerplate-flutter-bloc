@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MainScreen extends StatefulWidget {
+  const MainScreen({Key? key}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() => _MainScreenState();
 }
@@ -21,11 +23,10 @@ class _MainScreenState extends State<MainScreen> {
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text('Main Screen'),
+                const Text('Main Screen'),
                 CupertinoButton(
-                  child: Text('Logout'),
+                  child: const Text('Logout'),
                   onPressed: () {
                     BlocProvider.of<LoginBloc>(context).add(LogoutRequested());
                   },

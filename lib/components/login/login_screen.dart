@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginScreen extends StatelessWidget {
+  const LoginScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return BlocListener<LoginBloc, LoginState>(
@@ -20,11 +22,10 @@ class LoginScreen extends StatelessWidget {
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text('Login Screen'),
+                const Text('Login Screen'),
                 CupertinoButton(
-                  child: Text('Authenticate'),
+                  child: const Text('Authenticate'),
                   onPressed: () {
                     BlocProvider.of<LoginBloc>(context).add(LoginRequested());
                   },

@@ -10,7 +10,7 @@ class AppRouter {
   static const ROUTE_MAIN_PATH = '/';
   static const ROUTE_LOGIN_PATH = '/login';
 
-  static make(AuthenticationBloc authBloc) {
+  static GoRouter make(AuthenticationBloc authBloc) {
     return GoRouter(
       redirect: (GoRouterState state) {
         final isLoggedIn = authBloc.state is AuthenticationSucceeded;
@@ -32,7 +32,7 @@ class AppRouter {
           builder: (BuildContext context, GoRouterState state) {
             return BlocProvider(
               create: (context) => LoginBloc(LoginSucceeded()),
-              child: MainScreen(),
+              child: const MainScreen(),
             );
           },
         ),
@@ -41,7 +41,7 @@ class AppRouter {
           builder: (BuildContext context, GoRouterState state) {
             return BlocProvider(
               create: (BuildContext context) => LoginBloc(LoginRequired()),
-              child: LoginScreen(),
+              child: const LoginScreen(),
             );
           },
         ),

@@ -12,9 +12,10 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:go_router/go_router.dart';
 
 class App extends StatefulWidget {
-  State<App> createState() => _AppState();
+  const App({Key? key}) : super(key: key);
 
-  App({Key? key}) : super(key: key);
+  @override
+  State<App> createState() => _AppState();
 }
 
 class _AppState extends State<App> {
@@ -30,7 +31,7 @@ class _AppState extends State<App> {
     return CupertinoApp.router(
       routeInformationParser: router.routeInformationParser,
       routerDelegate: router.routerDelegate,
-      theme: CupertinoThemeData(
+      theme: const CupertinoThemeData(
         barBackgroundColor: CustomTheme.PRIMARY_COLOR,
         primaryColor: CustomTheme.PRIMARY_COLOR,
         primaryContrastingColor: CustomTheme.PRIMARY_CONTRASTING_COLOR,
@@ -40,7 +41,6 @@ class _AppState extends State<App> {
       localizationsDelegates: <LocalizationsDelegate<dynamic>>[
         FlutterI18nDelegate(
           translationLoader: FileTranslationLoader(
-            useCountryCode: false,
             decodeStrategies: [JsonDecodeStrategy()],
           ),
         ),
